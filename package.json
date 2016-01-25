@@ -1,0 +1,25 @@
+{
+  "name": "electrode_i2c",
+  "version": "0.0.1",
+  "description": "node driver for mini eC",
+  "main": "read.js",
+  "dependencies": {
+    "cron": "^1.1.0",
+    "grow.js": "^0.1.1",
+    "serialport": "^2.0.6",
+    "johnny-five": "^0.9.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node read.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtfierro/miniec_grow.js.git"
+  },
+  "author": "Gabe Fierro <gtfierro@eecs.berkeley.edu>",
+  "bugs": {
+    "url": "https://github.com/gtfierro/miniec_grow.js/issues"
+  },
+  "homepage": "https://github.com/gtfierro/miniec_grow.js#readme"
+}

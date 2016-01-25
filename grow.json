@@ -1,0 +1,149 @@
+{
+    "host": "localhost",
+    "port": "3000",
+    "thing": {
+        "model": {
+            "properties": {
+                "name": "Smart Pot",
+                "version": "0.1.5",
+                "description": "An example growkit.",
+                "type": "growkit",
+                "numberOfPlants": 1,
+                "state": "No plants"
+            },
+            "events": {
+                "waterLow": null
+            },
+            "actions": [
+                {
+                    "name": "Add plant",
+                    "call": "add-plant",
+                    "options": {}
+                }
+            ]
+        },
+        "sensors": [
+            {
+                "model": {
+                    "properties": {
+                        "name": "Light sensor",
+                        "type": "light",
+                        "chart": "line",
+                        "unit": "milivolts",
+                        "crons": [
+                            {
+                                "name": "logData",
+                                "text": "Log data",
+                                "cron": "* * * * *"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "model": {
+                    "properties": {
+                        "name": "Temperature sensor",
+                        "type": "temperature",
+                        "chart": "line",
+                        "unit": "Celcius",
+                        "crons": [
+                            {
+                                "name": "logData",
+                                "text": "Log data",
+                                "cron": "* * * * *"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "model": {
+                    "properties": {
+                        "name": "pH sensor",
+                        "type": "ph",
+                        "chart": "line",
+                        "unit": "Celcius",
+                        "crons": [
+                            {
+                                "name": "logData",
+                                "text": "Log data",
+                                "cron": "* * * * *"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "actuators": [
+            {
+                "model": {
+                    "events": {
+                        "on": null,
+                        "off": null
+                    },
+                    "properties": {
+                        "name": "Water pump",
+                        "type": "water-pump",
+                        "state": "off",
+                        "crons": [
+                            {
+                                "name": "waterPlant",
+                                "text": "Water plant",
+                                "cron": "* * * * *",
+                                "duration": 20000
+                            }
+                        ]
+                    },
+                    "actions": [
+                        {
+                            "name": "Turn on",
+                            "call": "waterpump_on"
+                        },
+                        {
+                            "name": "Turn off",
+                            "call": "waterpump_off"
+                        }
+                    ]
+                }
+            },
+            {
+                "model": {
+                    "events": {
+                        "turned-on": null,
+                        "turned-off": null
+                    },
+                    "properties": {
+                        "name": "Light",
+                        "type": "relay",
+                        "state": "off",
+                        "crons": [
+                            {
+                                "name": "lightsOn",
+                                "text": "Lights on",
+                                "cron": "* * * * *"
+                            },
+                            {
+                                "name": "lightsOff",
+                                "text": "Lights off",
+                                "cron": "0 19 * * *"
+                            }
+                        ]
+                    },
+                    "actions": [
+                        {
+                            "name": "On",
+                            "call": "light_on"
+                        },
+                        {
+                            "name": "off",
+                            "call": "light_off"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "uuid": "7e33d6d6-5376-41a7-801e-66a5587fd463",
+    "token": "eeJK8xd9Bt9wAGKfkBci43jNafAoRk2e"
+}
